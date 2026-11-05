@@ -1,122 +1,67 @@
-<div align="center">
+# Sirine Zaibi · AI Engineer Portfolio
 
-# Portfolio Website Template: Next.js, 3D Hero, Admin Panel & SEO
+Personal portfolio of **Sirine Zaibi**, computer science engineering student at ENSIT (specialization:
+Artificial Intelligence), looking for a 5–6 month PFE internship starting January 2027.
 
-**A free, production-ready developer portfolio template.** 3D animated hero, a built-in admin
-panel that captures your contact-form leads, and full SEO out of the box: sitemap, structured data
-and Open Graph. Build your personal website with Next.js 16, React 19, TypeScript, Three.js and
-Tailwind CSS v4.
+Built on a Next.js 16 / React 19 / TypeScript / Tailwind CSS v4 3D portfolio template: React Three Fiber
+astronaut hero, a GPU shader globe that follows the scroll, a pinned horizontal project showcase, an
+experience timeline and a skills marquee. Respects `prefers-reduced-motion`; the heavy 3D layers are
+deferred and never mount on phones.
 
-[**Live Demo**](https://www.hasnainirfan.com) · [Documentation](docs/) · [Deploy](docs/deployment.md)
-
-[![Next.js](https://img.shields.io/badge/Next.js-16-000000?logo=nextdotjs&logoColor=white)](https://nextjs.org)
-[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev)
-[![Three.js](https://img.shields.io/badge/Three.js-r184-000000?logo=threedotjs&logoColor=white)](https://threejs.org)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
-[![License: MIT](https://img.shields.io/badge/License-MIT-22c55e.svg)](LICENSE)
-
-[![Developer portfolio website template with 3D animated hero, built with Next.js, Three.js and Tailwind CSS](docs/images/screenshot.jpg)](https://www.hasnainirfan.com)
-
-</div>
-
-## What you get
-
-Most portfolio templates give you a page and stop. This one also tells you who got in touch, and
-makes sure people can find you.
-
-| | |
-| --- | --- |
-| **3D portfolio** | Animated GLTF hero, a GPU shader globe that travels with your scroll, a pinned horizontal case-study showcase, and scroll-driven reveals throughout |
-| **Admin panel** | Enquiries save to *your* Supabase database and appear in a private inbox at `/admin` with search, pagination and delete. No form-service fee, no one else holding your leads |
-| **SEO ready** | `sitemap.xml`, `robots.txt`, canonical URLs, Open Graph, Twitter cards and JSON-LD structured data, all generated from your own content |
-
-Every string, project and testimonial lives in `constants/`, one typed file per domain. Fork it,
-edit that folder, and it is your portfolio, with no component changes needed.
-
-## Features
-
-**Design:** 3D animated hero · shader globe · pinned case-study showcase · sticky service cards ·
-experience timeline · skills marquee · particle field · parallax background · responsive from 320px ·
-respects `prefers-reduced-motion`
-
-**Admin & leads:** contact form → your database · private inbox with search and pagination ·
-Supabase Auth + an `admin_users` allowlist · an acknowledgement email to the visitor and the lead to
-you · **zero secrets in the repo**
-
-**SEO:** sitemap · robots · canonical · Open Graph + Twitter cards · JSON-LD (`Person`, `WebSite`,
-`ProfilePage`, `ProfessionalService`) · Web App Manifest · generated favicons · self-hosted fonts ·
-`/admin` excluded from indexing
-
-**Code:** TypeScript strict · 0 lint errors · no file over 250 lines · organised by kind
-(`constants/` `types/` `hooks/` `helpers/` `animations/`) · runs with an empty `.env`
-
-## Tech stack
-
-Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS v4 · Three.js + React Three Fiber ·
-Motion · Supabase (Postgres, Auth, RLS, Edge Functions) · Vercel
-
-## Quick start
+## Run it
 
 ```bash
-git clone https://github.com/HasnainIrfan/myportfolio.git
-cd myportfolio
 npm install
-npm run dev
+npm run dev      # http://localhost:3000
+npm run build    # production build
 ```
 
-Open <http://localhost:3000>. Requires Node 20.9+. **No environment variables needed.** The site
-builds, deploys and runs with an empty `.env`.
+Requires Node 20.9+. No environment variables are needed to build or run.
 
-## Environment variables
+## Make it yours: finish these placeholders
 
-Four, all optional:
+All content lives in `constants/` (one typed file per domain). Open
+[`constants/social-constants.ts`](constants/social-constants.ts) first:
 
-| Variable | Purpose |
+| What | Where | Until you set it |
+| --- | --- | --- |
+
+| Project repos | `repo` per project in `constants/projects-constants.ts` | "GitHub · soon" disabled button |
+| Project screenshots | `image` per project (put WebP in `public/projects/`) | an architecture diagram is shown |
+| Domain | `NEXT_PUBLIC_SITE_URL` | canonical, sitemap and Open Graph use a placeholder domain |
+
+### Contact form
+
+Without configuration the form opens the visitor's email client with the message prefilled (it needs
+no backend). For real submissions, create a free form at [formspree.io](https://formspree.io) and set
+
+```
+NEXT_PUBLIC_CONTACT_ENDPOINT=https://formspree.io/f/your-form-id
+```
+
+See [`.env.example`](.env.example).
+
+## Where things are
+
+| Content | File |
 | --- | --- |
-| `NEXT_PUBLIC_SITE_URL` | Your domain. Drives the sitemap, canonical and Open Graph URLs. |
-| `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` | Google Search Console token. Renders the verification meta tag. |
-| `NEXT_PUBLIC_SUPABASE_URL` | Supabase project URL |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase anon key |
+| Hero text, stats, availability | `constants/hero-constants.ts` |
+| Projects | `constants/projects-constants.ts` |
+| Experience | `constants/experience-constants.ts` |
+| Skills (groups + marquee) | `constants/skills-constants.ts` |
+| Education, achievements, leadership | `constants/background-constants.ts` |
+| SEO and metadata | `constants/seo-constants.ts` |
+| Colours | `@theme` block in `app/globals.css` |
+| Globe path per section | `SECTION_KEYS` in `constants/globe-constants.ts` |
+| 3D model | `public/models/astronaut.glb`, `components/portfolio/astronaut.tsx` |
 
-There are **no server-only secrets**: no admin password, no session key, no service-role key, no
-SMTP credentials. Row-level security does the enforcing, and SMTP lives in Supabase.
+Colour tokens: `glow` is the cyan accent (`#38bdf8`), `violet` (`#8b5cf6`) and `royal` (`#5c33cc`) are the
+purples.
 
-## Make it yours
+When adding or removing a section, update `NAV_ITEMS` and add a matching keyframe to `SECTION_KEYS`, or the
+globe will slide past it without stopping.
 
-1. **Content:** edit `constants/` (hero, projects, services, experience, reviews, skills, socials)
-2. **Images:** `public/assets/`, and replace `public/og.jpg` with your own 1200×630 preview
-3. **Colours:** the `@theme` block at the top of `app/globals.css`
-4. **SEO:** `constants/seo-constants.ts`, then set `NEXT_PUBLIC_SITE_URL`
-5. **3D model:** drop a `.glb` in `public/models/` and update `components/portfolio/astronaut.tsx`
+## Licensing and credits
 
-Full walkthrough: [`docs/customization.md`](docs/customization.md)
-
-## Deployment
-
-Import the repo on Vercel and ship. There is nothing to configure. Add the Supabase values when you want the
-contact form and admin panel. Setup for the database, admin account and lead emails:
-[`docs/deployment.md`](docs/deployment.md).
-
-## Documentation
-
-| | |
-| --- | --- |
-| [`docs/customization.md`](docs/customization.md) | Making it your own, end to end |
-| [`docs/deployment.md`](docs/deployment.md) | Vercel, Supabase, Edge Function, checklist |
-| [`docs/admin.md`](docs/admin.md) | Admin panel: auth model, SQL, lead emails |
-| [`docs/architecture.md`](docs/architecture.md) | Project structure, the 3D layer, auth, database |
-| [`CONTRIBUTING.md`](CONTRIBUTING.md) | Conventions and PR flow |
-
-## Credits & licensing
-
-Code is [MIT](LICENSE). The content and assets are **not** - see [`NOTICE`](NOTICE).
-Replace them before deploying:
-
-- Personal content (name, biography, project write-ups, testimonials, résumé) belongs to Hasnain Irfan
-- `public/models/*.glb` is third-party fan art from Sketchfab, so **check its licence and keep the attribution**
-- Project screenshots and client logos belong to their owners
-
+Code is MIT ([LICENSE](LICENSE)). Content and third-party assets are described in [NOTICE](NOTICE).
 3D helpers by [pmndrs](https://github.com/pmndrs), animation by [Motion](https://motion.dev).
-
-If this helped you build your portfolio website, a ⭐ is very welcome.

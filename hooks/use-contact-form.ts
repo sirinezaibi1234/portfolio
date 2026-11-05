@@ -4,10 +4,15 @@ import { useCallback, useMemo, useRef, useState, type FormEvent } from "react";
 import {
   ALERT_DURATION,
   CONTACT_ERROR_MESSAGE,
+  CONTACT_MAILTO_MESSAGE,
   CONTACT_SUCCESS_MESSAGE,
   INITIAL_FORM_STATE,
   REQUIRED_FIELDS,
 } from "@/constants/contact-constants";
+import {
+  CONTACT_EMAIL,
+  CONTACT_ENDPOINT,
+} from "@/constants/social-constants";
 import {
   type AlertState,
   type AlertType,
@@ -19,6 +24,14 @@ const HIDDEN_ALERT: AlertState = {
   visible: false,
   type: "success",
   message: "",
+};
+
+const openMailClient = ({ name, email, subject, message }: ContactFormData) => {
+  const title = subject.trim() || `Portfolio message from ${name}`;
+  const body = `${message}\n\n${name}\n${email}`;
+  window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
+    title
+  )}&body=${encodeURIComponent(body)}`;
 };
 
 export const useContactForm = () => {
@@ -51,16 +64,23 @@ export const useContactForm = () => {
       setIsLoading(true);
 
       try {
-        const response = await fetch("/api/contact", {
+        // No form service configured: hand the message to the mail app.
+        if (!CONTACT_ENDPOINT) {
+          openMailClient(formData);
+          showAlert("success", CONTACT_MAILTO_MESSAGE);
+          return;
+        }
+
+        const response = await fetch(CONTACT_ENDPOINT, {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
           body: JSON.stringify(formData),
         });
-        const data = (await response.json().catch(() => ({}))) as {
-          error?: string;
-        };
 
-        if (!response.ok) throw new Error(data.error || "Submission failed.");
+        if (!response.ok) throw new Error(CONTACT_ERROR_MESSAGE);
 
         setFormData(INITIAL_FORM_STATE);
         showAlert("success", CONTACT_SUCCESS_MESSAGE);

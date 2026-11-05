@@ -12,10 +12,7 @@ import {
   HERO_NAME,
   HERO_ROLE,
 } from "@/constants/hero-constants";
-import { SERVICES } from "@/constants/services-constants";
 import { SKILL_CHIPS } from "@/constants/skills-constants";
-
-const [city, country] = HERO_LOCATION.split(",").map((part) => part.trim());
 
 const person = {
   "@type": "Person",
@@ -26,10 +23,10 @@ const person = {
   url: SITE_URL,
   email: `mailto:${CONTACT_POINT_EMAIL}`,
   image: `${SITE_URL}/og.jpg`,
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: city,
-    addressCountry: country,
+  address: { "@type": "PostalAddress", addressCountry: HERO_LOCATION },
+  alumniOf: {
+    "@type": "CollegeOrUniversity",
+    name: "National Higher School of Engineering of Tunis (ENSIT)",
   },
   knowsAbout: SKILL_CHIPS,
   sameAs: SOCIAL_PROFILES,
@@ -85,27 +82,6 @@ const profilePage = {
   significantLink: SITE_SECTIONS.map((section) => sectionId(section.hash)),
 };
 
-const professionalService = {
-  "@type": "ProfessionalService",
-  "@id": `${SITE_URL}/#service`,
-  name: `${HERO_NAME} Web & Mobile Development`,
-  url: SITE_URL,
-  provider: { "@id": `${SITE_URL}/#person` },
-  areaServed: "Worldwide",
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Services",
-    itemListElement: SERVICES.map((service) => ({
-      "@type": "Offer",
-      itemOffered: {
-        "@type": "Service",
-        name: service.title,
-        description: service.description,
-      },
-    })),
-  },
-};
-
 const graph = {
   "@context": "https://schema.org",
   "@graph": [
@@ -114,7 +90,6 @@ const graph = {
     profilePage,
     navigation,
     ...sections,
-    professionalService,
   ],
 };
 

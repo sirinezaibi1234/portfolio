@@ -14,7 +14,7 @@ export default function AppleIcon() {
           alignItems: "center",
           justifyContent: "center",
           background:
-            "linear-gradient(135deg, #5c33cc 0%, #ca2f8c 55%, #ea4884 100%)",
+            "linear-gradient(135deg, #5c33cc 0%, #8b5cf6 55%, #38bdf8 100%)",
         }}
       >
         <div
@@ -40,7 +40,7 @@ export default function AppleIcon() {
             letterSpacing: -4,
           }}
         >
-          H
+          S
         </div>
       </div>
     ),

@@ -34,16 +34,16 @@ export const Footer: FC = () => {
       >
         <div>
           <div className="flex items-center gap-2 text-base font-semibold tracking-tight text-white">
-            <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-royal to-coral text-white text-sm font-black">
-              H
+            <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-royal to-glow text-white text-sm font-black">
+              S
             </span>
             <span>{HERO_NAME}</span>
           </div>
           <p className="mt-3 text-sm text-neutral-400 max-w-sm">
-            Building scalable web & mobile products with care. Reach out at{" "}
+            Open to a PFE internship from January 2027. Reach out at{" "}
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="text-white hover:text-coral transition-colors"
+              className="text-white hover:text-glow transition-colors"
             >
               {CONTACT_EMAIL}
             </a>
@@ -84,7 +84,7 @@ export const Footer: FC = () => {
         transition={{ duration: 0.8, delay: 0.5 }}
         className="mt-16 text-center text-[20vw] md:text-[14rem] font-black leading-none text-white/[0.03] select-none"
       >
-        HASNAIN
+        SIRINE
       </motion.p>
     </footer>
   );

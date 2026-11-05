@@ -13,7 +13,7 @@ export const NavBrand: FC = () => (
     }}
     className="group flex items-center gap-2 text-base font-semibold tracking-tight text-white"
   >
-    <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-royal to-coral text-sm font-black text-white shadow-lg shadow-coral/20 transition-transform group-hover:scale-105">
+    <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-royal to-glow text-sm font-black text-white shadow-lg shadow-glow/20 transition-transform group-hover:scale-105">
       {HERO_NAME.charAt(0)}
     </span>
     <span className="hidden sm:inline">{HERO_NAME}</span>

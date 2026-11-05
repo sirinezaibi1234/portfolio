@@ -28,7 +28,7 @@ export const Contact: FC = () => {
 
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute left-1/3 top-10 h-72 w-72 rounded-full bg-royal/15 blur-[140px]" />
-        <div className="absolute bottom-20 right-1/4 h-64 w-64 rounded-full bg-coral/15 blur-[140px]" />
+        <div className="absolute bottom-20 right-1/4 h-64 w-64 rounded-full bg-glow/15 blur-[140px]" />
       </div>
 
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-start gap-8 lg:grid-cols-12 lg:gap-12">

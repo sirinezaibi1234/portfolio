@@ -1,9 +1,8 @@
-import { type CSSProperties, type HTMLAttributes, type RefObject } from "react";
+import { type HTMLAttributes } from "react";
 
 export interface ProjectTag {
   id: number;
   name: string;
-  path: string;
 }
 
 export interface Project {
@@ -12,9 +11,13 @@ export interface Project {
   category: string;
   description: string;
   subDescription: string[];
-  href: string;
-  logo: string;
+  /** Repository URL. Leave "" until it exists; the UI then shows a disabled state. */
+  repo: string;
+  /** Optional real screenshot in /public/projects. Leave "" to show the architecture diagram. */
   image: string;
+  /** Short, factual pipeline shown as a diagram when there is no screenshot. */
+  architecture: string[];
+  achievement?: string;
   tags: ProjectTag[];
   accent: string;
 }
@@ -30,21 +33,18 @@ export interface Experience {
   job: string;
   date: string;
   contents: string[];
+  badge?: string;
 }
 
-export interface Review {
-  name: string;
-  role: string;
-  body: string;
+export interface SkillGroup {
+  title: string;
+  skills: string[];
   accent: string;
 }
 
-export interface Service {
-  id: number;
+export interface BackgroundItem {
   title: string;
-  description: string;
-  icon: string;
-  bullets: string[];
+  detail: string;
 }
 
 export interface Stat {

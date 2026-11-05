@@ -1,18 +1,18 @@
 NOTICE — content and assets
 ===========================
 
-The MIT license in LICENSE covers the SOURCE CODE of this project only.
-It does not grant any rights to the following, which are included so the
-demo site renders but are not the author's to relicense:
+The MIT license in LICENSE covers the source code. It does not cover:
 
-  * Personal content: the name "Hasnain Irfan", biography, project
-    descriptions, testimonials, work history and the resume PDF.
+  * Personal content: the name, biography, project write-ups, work history and
+    CV of Sirine Zaibi. All rights reserved.
 
-  * The 3D model in public/models/, which is third-party work sourced from
-    Sketchfab and carries its own license and attribution requirement.
+  * The 3D model in public/models/astronaut.glb: third-party work from
+    Sketchfab that carries its own license and attribution requirement. Check
+    the license of the original model and keep its attribution.
 
-  * Project screenshots, client logos and brand marks in public/assets/,
-    which belong to their respective owners.
+  * The parallax artwork in public/assets/ (sky, mountains, planets): inherited
+    from the original portfolio template. Replace it if you need to own the
+    artwork outright.
 
-If you use this project as a template, replace all of the above with your
-own before deploying. See the "Credits & licensing" section of README.md.
+The code started from the open-source "3d-portfolio" template by Hasnain Irfan
+(https://github.com/HasnainIrfan/3d-portfolio), MIT licensed.

@@ -1,7 +1,7 @@
 export interface ContactFormData {
   name: string;
   email: string;
-  budget: string;
+  subject: string;
   message: string;
 }
 
@@ -24,11 +24,6 @@ export interface FloatingFieldProps {
   required?: boolean;
   textarea?: boolean;
   autoComplete?: string;
-}
-
-export interface BudgetFieldProps {
-  value: string;
-  onChange: (value: string) => void;
 }
 
 export interface ContactInfoCardProps {

@@ -4,13 +4,13 @@ import { type GlobeKey, type Orbit, type SectionKey } from "@/types/globe-types"
 export const THEME = {
   deep: "#1f1e39",
   base: "#6a3fd6",
-  hot: "#ea4884",
+  hot: "#38bdf8",
   spark: "#33c2cc",
   rim: "#33c2cc",
   core: "#08071a",
 } as const;
 
-export const ORB_COLORS = ["#ea4884", "#33c2cc", "#ca2f8c", "#57db96"] as const;
+export const ORB_COLORS = ["#38bdf8", "#33c2cc", "#8b5cf6", "#57db96"] as const;
 
 export const GLOBE = {
   sphereRadius: 1.5,
@@ -64,16 +64,16 @@ export const SECTION_KEYS: SectionKey[] = [
   { id: "about", at: 0.5, x: -0.47, y: -0.32, scale: 1.1, presence: 1 },
   { id: "about", at: 1, ...DIP },
 
-  { id: "services", at: 0.5, x: 0.47, y: -0.3, scale: 1.0, presence: 1 },
-  { id: "services", at: 1, ...DIP },
-
   { id: "work", at: 0.5, x: -0.46, y: -0.34, scale: 1.14, presence: 1 },
   { id: "work", at: 1, ...DIP },
 
-  { id: "testimonials", at: 0.5, x: 0.46, y: -0.31, scale: 1.02, presence: 1 },
-  { id: "testimonials", at: 1, ...DIP },
+  { id: "experience", at: 0.5, x: 0.47, y: -0.3, scale: 1.0, presence: 1 },
+  { id: "experience", at: 1, ...DIP },
 
-  { id: "contact", at: 0.5, x: -0.47, y: -0.33, scale: 1.1, presence: 1 },
+  { id: "background", at: 0.5, x: -0.46, y: -0.31, scale: 1.02, presence: 1 },
+  { id: "background", at: 1, ...DIP },
+
+  { id: "contact", at: 0.5, x: 0.47, y: -0.33, scale: 1.1, presence: 1 },
 ];
 
 export const TAIL_KEY: GlobeKey = { x: 0.3, y: -0.44, scale: 1.2, presence: 1 };

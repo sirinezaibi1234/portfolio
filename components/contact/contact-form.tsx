@@ -13,7 +13,6 @@ import { revealProps } from "@/animations/scroll-animations";
 import { SPRING_SOFT, swapLabel } from "@/animations/ui-animations";
 import { useContactForm } from "@/hooks/use-contact-form";
 import { Alert } from "@/components/portfolio/alert";
-import { BudgetField } from "./budget-field";
 import { FloatingField } from "./floating-field";
 
 export const ContactForm: FC = () => {
@@ -29,7 +28,7 @@ export const ContactForm: FC = () => {
 
   const pointerX = useMotionValue(50);
   const pointerY = useMotionValue(50);
-  const glow = useMotionTemplate`radial-gradient(600px circle at ${pointerX}% ${pointerY}%, rgba(234,72,132,0.15), transparent 40%)`;
+  const glow = useMotionTemplate`radial-gradient(600px circle at ${pointerX}% ${pointerY}%, rgba(56,189,248,0.15), transparent 40%)`;
 
   const disabled = isLoading || completion < 1;
 
@@ -54,9 +53,9 @@ export const ContactForm: FC = () => {
 
         <div className="relative mb-7 flex items-end justify-between gap-6">
           <div>
-            <p className="text-eyebrow">Place an order</p>
+            <p className="text-eyebrow">Send a message</p>
             <h3 className="mt-1 text-xl font-bold md:text-2xl">
-              Tell me about your project
+              Tell me what you&apos;re working on
             </h3>
           </div>
           <div className="flex items-center gap-3">
@@ -69,7 +68,7 @@ export const ContactForm: FC = () => {
                   scaleX: completionSpring,
                   transformOrigin: "0% 50%",
                 }}
-                className="absolute inset-0 bg-gradient-to-r from-coral to-lavender"
+                className="absolute inset-0 bg-gradient-to-r from-glow to-lavender"
               />
             </div>
           </div>
@@ -96,14 +95,16 @@ export const ContactForm: FC = () => {
             />
           </div>
 
-          <BudgetField
-            value={formData.budget}
-            onChange={(value) => update("budget", value)}
+          <FloatingField
+            id="subject"
+            label="Subject"
+            value={formData.subject}
+            onChange={(value) => update("subject", value)}
           />
 
           <FloatingField
             id="message"
-            label="What are you building?"
+            label="Your message"
             value={formData.message}
             onChange={(value) => update("message", value)}
             required
@@ -118,8 +119,8 @@ export const ContactForm: FC = () => {
               disabled ? "cursor-not-allowed opacity-60" : "cursor-pointer"
             }`}
             style={{
-              background: "linear-gradient(135deg, #5c33cc 0%, #ea4884 100%)",
-              boxShadow: "0 10px 30px -10px rgba(234, 72, 132, 0.55)",
+              background: "linear-gradient(135deg, #5c33cc 0%, #38bdf8 100%)",
+              boxShadow: "0 10px 30px -10px rgba(56,189,248, 0.55)",
             }}
           >
             <AnimatePresence mode="wait">

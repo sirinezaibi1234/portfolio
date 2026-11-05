@@ -32,13 +32,13 @@ export const PageLoader: FC = () => {
     <div className="page-loader fixed inset-0 z-[100] flex items-center justify-center overflow-hidden bg-primary">
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <div className="absolute top-1/3 left-1/4 h-80 w-80 rounded-full bg-royal/30 blur-[140px]" />
-        <div className="absolute bottom-1/4 right-1/4 h-80 w-80 rounded-full bg-coral/25 blur-[140px]" />
+        <div className="absolute bottom-1/4 right-1/4 h-80 w-80 rounded-full bg-glow/25 blur-[140px]" />
       </div>
 
       <div className="relative flex w-full max-w-3xl flex-col items-center px-6 text-center md:px-10">
         <div className="reveal-pop relative">
-          <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-royal/40 to-coral/40 blur-2xl" />
-          <span className="relative inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-royal to-coral text-3xl font-black text-white shadow-2xl shadow-coral/30 md:h-20 md:w-20 md:text-4xl">
+          <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-royal/40 to-glow/40 blur-2xl" />
+          <span className="relative inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-royal to-glow text-3xl font-black text-white shadow-2xl shadow-glow/30 md:h-20 md:w-20 md:text-4xl">
             H
           </span>
         </div>
@@ -74,7 +74,7 @@ export const PageLoader: FC = () => {
           </div>
           <div className="relative h-[2px] w-full rounded-full bg-white/10">
             <div className="absolute inset-0 overflow-hidden rounded-full">
-              <div className="intro-fill absolute inset-0 bg-gradient-to-r from-coral via-lavender to-aqua" />
+              <div className="intro-fill absolute inset-0 bg-gradient-to-r from-glow via-lavender to-aqua" />
             </div>
             <div className="intro-knob absolute inset-0">
               <span className="absolute -top-1 left-0 -ml-1.5 h-3 w-3 rounded-full bg-white shadow-[0_0_20px_rgba(255,255,255,0.7)]" />

@@ -25,27 +25,32 @@ export const AboutBio: FC = () => {
         {HERO_NAME} · {HERO_LOCATION}
       </h3>
       <p className="text-base leading-relaxed text-neutral-300 md:text-lg">
-        I&apos;m a Senior Software Engineer with{" "}
-        <span className="font-semibold text-white">5+ years</span> of experience
-        designing and shipping production-grade web and mobile products. I lead
-        with clean code, sharp problem-solving and a deep care for the user
-        experience.
+        I&apos;m a{" "}
+        <span className="font-semibold text-white">
+          Computer Science Engineering student at ENSIT
+        </span>{" "}
+        with a strong interest in Artificial Intelligence and intelligent
+        systems. I like turning research ideas into software people can
+        actually use.
       </p>
       <p className="mt-4 leading-relaxed text-neutral-400">
-        From <span className="text-white">Front-End Developer</span> to{" "}
-        <span className="text-white">Junior Team Lead</span>, and now{" "}
-        <span className="text-white">Senior Software Engineer at Getweys</span>,
-        I&apos;ve led teams, mentored developers, and contributed to architecture
-        decisions that kept codebases scalable and maintainable.
+        I enjoy building AI-powered applications, experimenting with modern
+        architectures, and combining software engineering with AI research. My
+        hands-on work spans{" "}
+        <span className="text-white">Generative AI</span>,{" "}
+        <span className="text-white">RAG</span>,{" "}
+        <span className="text-white">Knowledge Graphs</span> and{" "}
+        <span className="text-white">Agentic AI</span>, from a health-insurance
+        assistant to a multi-agent clinical decision-support system.
       </p>
 
       <div className="mt-8 flex flex-wrap gap-3">
-        <a href="#contact" className="btn-primary">
-          <span>Start a project</span>
+        <a href="#work" className="btn-primary">
+          <span>See my projects</span>
           <span aria-hidden>→</span>
         </a>
-        <a href="#work" className="btn-ghost">
-          <span>See past work</span>
+        <a href="#contact" className="btn-ghost">
+          <span>Get in touch</span>
         </a>
       </div>
     </motion.div>

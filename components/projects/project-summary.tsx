@@ -2,6 +2,7 @@
 
 import { type FC } from "react";
 import { motion } from "motion/react";
+import { RepoLink } from "@/components/projects/repo-link";
 import { formatCounter } from "@/helpers/format-helpers";
 import { type ProjectSummaryProps } from "@/types/project-types";
 
@@ -34,6 +35,16 @@ export const ProjectSummary: FC<ProjectSummaryProps> = ({
       {project.title}
     </motion.h3>
 
+    {project.achievement && (
+      <motion.p
+        {...reveal(0.05)}
+        className="mt-4 inline-flex items-center gap-2 rounded-full border border-glow/30 bg-glow/10 px-3 py-1 text-xs text-glow"
+      >
+        <span aria-hidden>★</span>
+        {project.achievement}
+      </motion.p>
+    )}
+
     <motion.p
       {...reveal(0.1)}
       className="mt-5 max-w-xl leading-relaxed text-neutral-400"
@@ -53,18 +64,11 @@ export const ProjectSummary: FC<ProjectSummaryProps> = ({
     </motion.div>
 
     <motion.div {...reveal(0.3)} className="mt-7 flex flex-wrap gap-3">
-      <a
-        href={project.href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="btn-primary"
-      >
-        <span>Visit Live</span>
-        <span aria-hidden>↗</span>
-      </a>
-      <button type="button" onClick={onOpen} className="btn-ghost">
+      <button type="button" onClick={onOpen} className="btn-primary">
         <span>Case study</span>
+        <span aria-hidden>→</span>
       </button>
+      <RepoLink repo={project.repo} />
     </motion.div>
   </div>
 );

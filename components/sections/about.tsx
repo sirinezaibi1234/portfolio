@@ -4,6 +4,7 @@ import { useRef, type FC } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { AboutBio } from "@/components/about/about-bio";
 import { AboutStatCard } from "@/components/about/about-stat-card";
+import { SkillGroups } from "@/components/about/skill-groups";
 import { SkillsMarquee } from "@/components/about/skills-marquee";
 import { SectionHeader } from "@/components/ui/section-header";
 import { STATS } from "@/constants/hero-constants";
@@ -33,15 +34,15 @@ export const About: FC = () => {
         className="pointer-events-none absolute inset-0 -z-10"
       >
         <div className="absolute left-1/4 top-1/3 h-72 w-72 rounded-full bg-royal/30 blur-[120px]" />
-        <div className="absolute bottom-1/4 right-1/4 h-80 w-80 rounded-full bg-coral/20 blur-[140px]" />
+        <div className="absolute bottom-1/4 right-1/4 h-80 w-80 rounded-full bg-glow/20 blur-[140px]" />
       </motion.div>
 
       <SectionHeader
         eyebrow="About"
         title={
           <>
-            Engineering products that{" "}
-            <span className="text-gradient">people actually use.</span>
+            Building intelligent systems{" "}
+            <span className="text-gradient">that people can use.</span>
           </>
         }
       />
@@ -55,6 +56,7 @@ export const About: FC = () => {
         </div>
       </div>
 
+      <SkillGroups />
       <SkillsMarquee />
     </section>
   );

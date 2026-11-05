@@ -17,7 +17,7 @@ export const ParallaxBackground: FC = () => {
 
   return (
     <section className="absolute inset-0 bg-black/40">
-      <div className="relative h-screen overflow-y-hidden">
+      <div className="relative isolate h-screen overflow-y-hidden">
         <div className="absolute inset-0 -z-50">
           <Image
             src="/assets/sky.webp"
@@ -93,6 +93,20 @@ export const ParallaxBackground: FC = () => {
             </div>
           </>
         )}
+
+        {/* Recolours the template artwork into the cyan-violet palette. */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-gradient-to-br from-violet via-royal to-glow opacity-80 mix-blend-color"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-primary/50 via-transparent to-primary"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-gradient-to-r from-primary/75 via-primary/30 to-transparent md:from-primary/70"
+        />
       </div>
     </section>
   );

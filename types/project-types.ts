@@ -5,14 +5,13 @@ export interface ProjectPanelProps {
   index: number;
   total: number;
   onOpen: () => void;
-  showPreview: boolean;
 }
 
-export type ProjectSummaryProps = Omit<ProjectPanelProps, "showPreview">;
+export type ProjectSummaryProps = ProjectPanelProps;
 
 export type ProjectPreviewProps = Pick<
   ProjectPanelProps,
-  "project" | "index" | "total" | "showPreview"
+  "project" | "index" | "total"
 >;
 
 export interface ProjectListProps {

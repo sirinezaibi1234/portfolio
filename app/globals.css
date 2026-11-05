@@ -13,10 +13,10 @@
   --color-mint: #57db96;
   --color-royal: #5c33cc;
   --color-lavender: #7a57db;
-  --color-fuchsia: #ca2f8c;
+  --color-violet: #8b5cf6;
   --color-orange: #cc6033;
   --color-sand: #d6995c;
-  --color-coral: #ea4884;
+  --color-glow: #38bdf8;
   --animate-orbit: orbit 50s linear infinite;
   @keyframes orbit {
     0% {
@@ -123,11 +123,11 @@ body {
   background: #06091f;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(#5c33cc, #ca2f8c);
+  background: linear-gradient(#5c33cc, #8b5cf6);
   border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(#7a57db, #ea4884);
+  background: linear-gradient(#7a57db, #38bdf8);
 }
 
 .c-space {
@@ -151,7 +151,7 @@ body {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #fff 0%, #b5a8e8 50%, #ea4884 100%);
+  background: linear-gradient(135deg, #fff 0%, #a5b4fc 50%, #38bdf8 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -174,7 +174,7 @@ body {
   inset: 0;
   padding: 1px;
   border-radius: inherit;
-  background: linear-gradient(135deg, rgba(122,87,219,0.6), rgba(234,72,132,0.4), rgba(51,194,204,0.4));
+  background: linear-gradient(135deg, rgba(122,87,219,0.6), rgba(56,189,248,0.4), rgba(51,194,204,0.4));
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
           mask-composite: exclude;
@@ -216,14 +216,14 @@ body {
 
 .btn-primary {
   @apply relative inline-flex items-center justify-center gap-2 px-6 py-3 text-sm md:text-base font-medium rounded-full cursor-pointer overflow-hidden text-white transition-transform duration-300 hover:-translate-y-0.5;
-  background: linear-gradient(135deg, #5c33cc 0%, #ea4884 100%);
-  box-shadow: 0 10px 30px -10px rgba(234, 72, 132, 0.55);
+  background: linear-gradient(135deg, #5c33cc 0%, #38bdf8 100%);
+  box-shadow: 0 10px 30px -10px rgba(56,189,248, 0.55);
 }
 .btn-primary::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #7a57db 0%, #ca2f8c 100%);
+  background: linear-gradient(135deg, #7a57db 0%, #8b5cf6 100%);
   opacity: 0;
   transition: opacity 0.3s ease;
 }

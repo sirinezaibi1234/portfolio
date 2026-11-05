@@ -21,7 +21,7 @@ export const ContactInfoCard: FC<ContactInfoCardProps> = ({
         </p>
         <p
           className={`truncate text-sm text-white ${
-            href ? "transition-colors group-hover:text-coral" : ""
+            href ? "transition-colors group-hover:text-glow" : ""
           }`}
         >
           {value}
